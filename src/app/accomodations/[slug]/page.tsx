@@ -1,12 +1,13 @@
+import { FC } from "react";
 import React from 'react'
 
-type Props = {
+type PageProps = {
     params: {
         slug: string;
     };
-}
+};
 
-const AccomodationsSlug = ({ params }: Props) => {
+const AccomodationsSlug: FC<PageProps> = ({ params }) => {
     return (
 
         <div>{params.slug}</div>
