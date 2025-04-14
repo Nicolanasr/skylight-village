@@ -1,15 +1,6 @@
-type PageProps = {
-    params: {
-        slug: string;
-    };
-};
+type Params = Promise<{ slug: string[] }>;
 
-const AccomodationsSlug = async ({ params }: PageProps) => {
+export default async function Page({ params }: { params: Params }) {
     const { slug } = await params;
-
-    return (
-        <div>{slug}</div>
-    );
-};
-
-export default AccomodationsSlug;
+    return <>{slug}</>;
+}
