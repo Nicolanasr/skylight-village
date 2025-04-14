@@ -36,13 +36,13 @@ const Header = () => {
 
                 {/* Navigation */}
                 <nav className={`hidden md:flex space-x-6 items-center ${isScrolled ? "text-foreground" : "text-background"}`}>
-                    <Link href="/stay">Stay</Link>
+                    <Link href="/accomodations">Stay</Link>
                     <Link href="/explore">Explore</Link>
                     <Link href="/activities">Activities</Link>
                     <Link href="/gallery">Gallery</Link>
                     <Link href="/blog">Blog</Link>
                     <Link href="/contact">Contact</Link>
-                    <Button href="/reservation" scheme="transparent" className="hover:bg-background hover:border-background hover:text-skylight-green">
+                    <Button href="/accomodations" scheme="transparent" className="hover:bg-background hover:border-background hover:text-skylight-green">
                         Book Now
                     </Button>
                 </nav>

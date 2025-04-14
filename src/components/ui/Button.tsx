@@ -12,7 +12,7 @@ interface ButtonProps {
 
 
 const Button = ({ children, href, className, onClick, type }: ButtonProps) => {
-    const classes: string = `border-2 cursor-pointer transition-all rounded-lg px-6 py-2 inline-block ${className}`;
+    const classes: string = `border-2 cursor-pointer transition-all rounded-lg px-6 py-2 inline-block font-semibold ${className}`;
 
     return (
         href ?

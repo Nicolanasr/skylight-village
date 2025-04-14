@@ -27,12 +27,17 @@ const services: { icon: ReactElement; title: string; desc: string; highlight?: b
     { icon: <ToyBrick strokeWidth={1.4} height={75} width={75} />, title: "Playground", desc: "" },
     {
         icon: (
-            <>
-                <Flame strokeWidth={1.4} height={75} width={75} />
-                <MoonStar strokeWidth={1.4} height={75} width={75} />
-            </>
+            <Flame strokeWidth={1.4} height={75} width={75} />
         ),
-        title: "Campfire & Stargazing ",
+        title: "Campfire",
+        desc: "Gather around the fire for stories, warmth, and breathtaking views of the starry night sky.",
+        image: "/images/stargazing.jpg"
+    },
+    {
+        icon: (
+            <MoonStar strokeWidth={1.4} height={75} width={75} />
+        ),
+        title: "Stargazing ",
         desc: "Gather around the fire for stories, warmth, and breathtaking views of the starry night sky.",
         highlight: true,
         image: "/images/stargazing.jpg"
@@ -49,18 +54,18 @@ const About = ({ className }: Props) => {
                     beneath the stars, stay in our charming octagon-shaped bungalows or cozy tents, and reconnect with the simplicity of the outdoors.
                     Whether you{"'"}re a family, a group of friends, or a scout troop seeking new memories, your perfect getaway starts here.
                 </p>
-                <div className="flex flex-wrap justify-around mt-12 gap-8">
+                <div className="flex flex-wrap justify-around mt-12 gap-8 ">
                     {services.map((service, index: number) => (
-                        <div key={index} className="text-center flex flex-col justify-center items-center flex-[1]">
+                        <div key={index} className=" text-center flex flex-col justify-center items-center flex-[1]">
                             <div className="mx-auto flex gap-2 items-center justify-center text-4xl text-skylight-green">{service.icon}</div>
-                            <h4 className="mt-2 md:text-lg font-medium text-center whitespace-nowrap">{service.title}</h4>
+                            <h4 className="mt-2 md:text-lg font-medium text-center md:whitespace-nowrap">{service.title}</h4>
                         </div>
                     ))}
                 </div>
-                <div className="mt-12 grid gap-6 md:grid-cols-3">
+                <div className="mt-12 grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
                     {services.map((service, index) => (
                         service.highlight && <div className="text-center" key={index}>
-                            <Image src={service.image || ""} alt={service.title} height={300} width={800} objectFit="cover" className="h-72 object-cover" />
+                            <Image src={service.image || ""} alt={service.title} height={600} width={600} objectFit="cover" className="h-64 w-64 mx-auto lg:h-auto lg:w-full aspect-square object-cover octagon-path" />
                             <h3 className="font-semibold text-2xl mt-4">{service.title}</h3>
                             <p className="mt-2">{service.desc}</p>
                         </div>
