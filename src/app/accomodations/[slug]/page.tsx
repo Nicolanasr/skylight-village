@@ -5,7 +5,7 @@ type PageProps = {
 };
 
 const AccomodationsSlug = async ({ params }: PageProps) => {
-    const { slug } = params;
+    const { slug } = await params;
 
     return (
         <div>{slug}</div>
