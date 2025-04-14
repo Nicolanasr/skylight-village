@@ -8,9 +8,10 @@ type PageProps = {
 };
 
 const AccomodationsSlug: FC<PageProps> = ({ params }) => {
+    const { slug } = params;
     return (
 
-        <div>{params.slug}</div>
+        <div>{slug}</div>
     )
 }
 
