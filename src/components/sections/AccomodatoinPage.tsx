@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import AccomodationCart, { AccType } from "../bookings/AccomodationCart";
 import BookingSideFilter from "../bookings/BookingSideFilter";
+import { checkEnvironment } from "@/lib/functions";
 
 interface Props {
     accommodations: AccType[];
@@ -23,7 +24,7 @@ const AccomodationPage: React.FC<Props> = ({ accommodations }) => {
 
         try {
             const queryString = new URLSearchParams(formValues).toString();
-            const res = await fetch(`http://localhost:3000/api/accomodations?${queryString}`, {
+            const res = await fetch(`${checkEnvironment()}/api/accomodations?${queryString}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",

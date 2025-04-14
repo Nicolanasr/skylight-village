@@ -12,7 +12,7 @@ const Home = async () => {
     let accommodations: AccType[] = [];
 
     try {
-        const res = await fetch("http://localhost:3000/api/accomodations", {
+        const res = await fetch("/api/accomodations", {
             next: { revalidate: 60 }, // optional if using in app/
         });
 
