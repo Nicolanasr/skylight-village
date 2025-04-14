@@ -1,18 +1,15 @@
-import { FC } from "react";
-import React from 'react'
-
 type PageProps = {
     params: {
         slug: string;
     };
 };
 
-const AccomodationsSlug: FC<PageProps> = ({ params }) => {
+const AccomodationsSlug = async ({ params }: PageProps) => {
     const { slug } = params;
+
     return (
-
         <div>{slug}</div>
-    )
-}
+    );
+};
 
-export default AccomodationsSlug
+export default AccomodationsSlug;
