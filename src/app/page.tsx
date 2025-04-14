@@ -7,12 +7,13 @@ import React from "react";
 import { AccType } from "@/components/bookings/AccomodationCart";
 import InstagramPosts from "@/components/sections/InstagramPosts";
 import Infrastructure from "@/components/sections/Infrastructure";
+import { checkEnvironment } from "@/lib/functions";
 
 const Home = async () => {
     let accommodations: AccType[] = [];
 
     try {
-        const res = await fetch("/api/accomodations", {
+        const res = await fetch(`${checkEnvironment()}/api/accomodations`, {
             next: { revalidate: 60 }, // optional if using in app/
         });
 
